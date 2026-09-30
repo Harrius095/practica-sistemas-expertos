@@ -114,7 +114,23 @@ def ejecutar_casos():
     engine.run()
     
     print("\n--- Pruebas de nuevas enfermedades (Ejercicio 1) ---")
-    print("\nPrueba Dengue:")
+    
+    print("\nPrueba COVID-19:")
+    engine.reset()
+    engine.declare(Sintoma(fiebre=True, tos_seca=True, perdida_olfato=True))
+    engine.run()
+
+    print("\nPrueba Resfriado común:")
+    engine.reset()
+    engine.declare(Sintoma(congestion_nasal=True, estornudos=True, tos_leve=True))
+    engine.run()
+
+    print("\nPrueba Bronquitis:")
+    engine.reset()
+    engine.declare(Sintoma(tos_persistente=True, produccion_flema=True, dificultad_respiratoria=True))
+    engine.run()
+
+    print("\nPrueba Dengue (Enfermedad personalizada):")
     engine.reset()
     engine.declare(Sintoma(fiebre=True, dolor_articulaciones=True, sarpullido=True))
     engine.run()
